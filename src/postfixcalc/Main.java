@@ -19,7 +19,7 @@ public class Main{
 			catch (Exception e) {
 				switch (val) {
 				  case "/":
-				    System.out.println("Today is Saturday");
+				    System.out.println("Today is Div");
 				    if (vector.count()>2) {
 				    	int valor1= (int) vector.getHead().getValue();
 				    	vector.pull();
@@ -35,9 +35,15 @@ public class Main{
 				    }
 				    break;
 				  case "+":
-				    System.out.println("Today is Sunday");
+				    System.out.println("Today is Sum");
 				    if (vector.count()>2) {
-				    	
+				    	int valor1= (int) vector.getHead().getValue();
+				    	vector.pull();
+				    	int valor2= (int) vector.getHead().getValue();
+				    	vector.pull();
+				    	PostfixCalc operation=new PostfixCalc();
+				    	vector.push(operation.Evaluate(valor1, valor2, val));
+				    	System.out.print(vector.getHead().getValue());
 				    }
 				    else {
 				    	System.out.println("No es válida la operación dado que faltan valores para operar.");
@@ -45,18 +51,30 @@ public class Main{
 				    
 				    break;
 				  case "*":
-					System.out.println("Today is Sunday");
+					System.out.println("Today is multi");
 					if (vector.count()>2) {
-				    	
+						int valor1= (int) vector.getHead().getValue();
+				    	vector.pull();
+				    	int valor2= (int) vector.getHead().getValue();
+				    	vector.pull();
+				    	PostfixCalc operation=new PostfixCalc();
+				    	vector.push(operation.Evaluate(valor1, valor2, val));
+				    	System.out.print(vector.getHead().getValue());
 				    }
 				    else {
 				    	System.out.println("No es válida la operación dado que faltan valores para operar.");
 				    }
 				    break;
 				  case "-":
-					System.out.println("Today is SSunday");
+					System.out.println("Today is Subs");
 					if (vector.count()>2) {
-				    	
+						int valor1= (int) vector.getHead().getValue();
+				    	vector.pull();
+				    	int valor2= (int) vector.getHead().getValue();
+				    	vector.pull();
+				    	PostfixCalc operation=new PostfixCalc();
+				    	vector.push(operation.Evaluate(valor1, valor2, val));
+				    	System.out.print(vector.getHead().getValue());
 				    }
 				    else {
 				    	System.out.println("No es válida la operación dado que faltan valores para operar.");
@@ -69,7 +87,11 @@ public class Main{
 			}
 				
 		}
-	
+	if (vector.isEmpty()) {
+		System.out.print("La cuenta era correcta,  no hubo errores por malas prácticas");
+	}else {
+		System.out.print("Nefasta cuenta");
+	}
 		}
 	}
 
