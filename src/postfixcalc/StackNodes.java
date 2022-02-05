@@ -1,14 +1,20 @@
 package postfixcalc;
 
 public class StackNodes<T> implements IStack<T> {
-	
+	/**
+	 * Es la clase de la pila de nodos que implementa el ADT IStack usando generics
+	 */
 	private Node<T> head;
 	private int count;
-	
+	/**
+	 * Constructor de la pila
+	 */
 	public StackNodes() {
 		head = null;
 	}
-
+/**
+ * push para ingresar nuevos nodes
+ */
 	@Override
 	public void push(T value) {
 		Node<T> newNode = new Node<T>(value);
@@ -23,7 +29,10 @@ public class StackNodes<T> implements IStack<T> {
 		}
 		count++;
 	}
-
+/**
+ * Getters y setters
+ * @return
+ */
 	public Node<T> getHead() {
 		return head;
 	}

@@ -38,8 +38,16 @@ public class Main{
 			 */
 			catch (Exception e) {
 				switch (val) {
+				/**
+				 * Switch 4 the operations
+				 */
 				  case "/":
 				    System.out.println("Today is Div");
+				    /**
+				     * The if's make sure there is at least 2 values in the stack to be operated, asi mismo este procedimiento hace pull y elimina los
+				     * datos que ya no se usaran en el stack y realiza la operacion llamando al operador postfixcalc
+				     * finalmente resube los valores al stack
+				     */
 				    if (vector.count()>2) {
 				    	int valor1= (int) vector.getHead().getValue();
 				    	vector.pull();
@@ -100,6 +108,9 @@ public class Main{
 				    	System.out.println("No es válida la operación dado que faltan valores para operar.");
 				    }
 				    break;
+				    /**
+				     * Este permite decir que si un operador no es válido dado que no es un operador entonces aparecerá un mensaje de error.
+				     */
 				  default:
 				    System.out.println("No es operador válido" + val);
 					
@@ -107,7 +118,10 @@ public class Main{
 			}
 				
 		}
-	if (vector.isEmpty()) {
+		/**
+		 * finally this is the one to make sure there are no mistakes in the data and all the values were used.
+		 */
+	if (vector.count()==1) {
 		System.out.print("La cuenta era correcta,  no hubo errores por malas prácticas");
 	}else {
 		System.out.print("Nefasta cuenta");

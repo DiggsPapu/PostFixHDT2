@@ -1,5 +1,10 @@
 package postfixcalc;
-
+/**
+ * 
+ * @author diego alonzo 20172
+ *Es generic y es un ADT
+ * @param <T>
+ */
 public interface IStack<T> {
 
 	void push(T value);
