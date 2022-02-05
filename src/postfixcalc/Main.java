@@ -1,21 +1,41 @@
 package postfixcalc;
-
+/***
+ * Creación del main para ejecutar el postfix.
+ */
 import java.io.File;
 import java.util.Scanner;
 
-
+/**
+ * Es la main.
+ * @author diego alonzo
+ *
+ */
 public class Main{
 	public static void main(String[] args) throws Exception{
+		/**
+		 * Se crea un almacenamiento del archivo de texto datos.txt
+		 */
 		File postfix=new File("C:\\Users\\Windows 10\\Documents\\UVG\\CODING\\Algoritmos y estructuras de datos\\HDT\\HDT 2\\datos.txt");
+		/**
+		 * Se utiliza el paquete para scannear y poder manejarlo.
+		 */
 		Scanner sc = new Scanner(postfix);
 		StackNodes vector=new StackNodes();
-		
+		/**
+		 * Se crea un ciclo while para mantenerlo en marcha siempre y cuando haya un valor extra dentro del dato.
+		 */
 		while (sc.hasNext()) {
 			String val=sc.next();
+			/**
+			 * El try es para probar si es un entero el valor extraído del file
+			 */
 			try {
 				int valueint=Integer.valueOf(val);
 				vector.push(valueint);
 			}
+			/**
+			 * el catch es en caso de que de error y en el caso de que sea un operador
+			 */
 			catch (Exception e) {
 				switch (val) {
 				  case "/":

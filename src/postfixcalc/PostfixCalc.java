@@ -5,14 +5,7 @@ public class PostfixCalc implements IPostfixCalc{
 	@Override
 	public int Evaluate(int val1, int val2, String operador) {
 		// TODO Auto-generated method stub
-//		if (operador=="-") {
-//			System.out.print("LLL");  
-//			int resultado=val2-val1;
-//			  return resultado;
-//			  
-//		  }else {
-//			  return 0;
-//		  }
+
 		switch(operador) {
 		  case "-":
 		    int resultadoresta= -val1+val2;
